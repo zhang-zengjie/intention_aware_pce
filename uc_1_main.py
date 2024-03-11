@@ -38,7 +38,7 @@ sys = {ego.name: ego,
 xx = np.zeros([ego.n, N + 1])
 zz = np.zeros([oppo.basis.L, oppo.n, N + 1])
 
-if False:
+if True:
         
     xx[:, 0,] = e0
     zz[0, :, 0] = o0
