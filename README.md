@@ -14,16 +14,14 @@
 - `conda install -c conda-forge importlib_metadata`
 - `conda install -c conda-forge numpoly`
 
-## Toolbox stlpy
+## Dependent Toolboxes
 
-This benchmark is based on the `stlpy` toolbox (https://github.com/vincekurtz/stlpy/blob/main/README.md). Please cite the source when you develop your own benchmark.
+This benchmark is based on the following toolboxes. Please cite the sources when you develop your own benchmarks.
+- `stlpy` toolbox (https://github.com/vincekurtz/stlpy/blob/main/README.md)
+- `chaospy` toolbox (https://chaospy.readthedocs.io/en/master/)
 
 ## Running scripts
 
-- Run `compare_statistics.py` to compare PCE and Monte Carlo statistics
-- Go go `commons.py` to change variables of PCE basis and specifications
-- Run `main.py` to solve the optimizer
+- Run `uc_1_main.py` for the use case I (overtaking case)
+- Run `uc_2_main.py` for the use case II (intersection case)
 
-## License
-
-For the license of the `stlpy` toolbox, refer to `stlpy/LICENSE`.
