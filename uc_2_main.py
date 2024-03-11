@@ -33,7 +33,7 @@ tr = {'ego': np.zeros([sys['ego'].n, N + 1]),                                # S
       'oppo': np.zeros([sys['oppo'].basis.L, sys['oppo'].n, N + 1]),         # Simulated trajectories of the opponent vehicle (OV)
       'pedes': np.zeros([sys['pedes'].basis.L, sys['pedes'].n, N + 1])}      # Simulated trajectories of the pedestrian (PD)
 
-if False:
+if True:
 
     tr['ego'][:, 0] = e0
     tr['oppo'][0, :, 0] = o0
