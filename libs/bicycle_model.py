@@ -49,13 +49,6 @@ class BicycleModel(NonlinearSystem):
         self.param = None
         self.PCE = pce
 
-        if self.PCE:
-            self.basis = basis
-            self.x0_pce = None
-
-        self.intent_gain = intent_gain
-        self.intent_offset = intent_offset
-
         # Param list: bias (delta), length (l), intent (iota)
         self.fn = [
             lambda z: z[0],             # delta for E1
@@ -64,6 +57,14 @@ class BicycleModel(NonlinearSystem):
         ]
 
         self.x0 = None
+
+        if self.PCE:
+            self.basis = basis
+            self.x0_pce = None
+            self.coef = self.basis.generate_coefficients_multiple(self.fn)
+
+        self.intent_gain = intent_gain
+        self.intent_offset = intent_offset
 
 
     def f(self, x, u):
@@ -127,11 +128,11 @@ class BicycleModel(NonlinearSystem):
 
         A, B, E = get_linear_matrix(self.x0, self.delta_t)
 
-        coef = self.basis.generate_coefficients_multiple(self.fn)
+        
 
-        b_hat_0 = coef[2]
-        b_hat_1 = coef[1]
-        e_hat_1 = coef[0]
+        b_hat_0 = self.coef[2]
+        b_hat_1 = self.coef[1]
+        e_hat_1 = self.coef[0]
 
         a_hat_0 = np.zeros(b_hat_1.shape)
         a_hat_1 = np.zeros(b_hat_1.shape)
