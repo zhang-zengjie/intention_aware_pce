@@ -1,9 +1,10 @@
-# Benchmark for PCE-Facilitated Intention-Aware Control
+# Intent-Aware Control Facilitated by Polynomial Chaos Expansion
 
-**Authors:** Zengjie Zhang
+**Author:** Zengjie Zhang (z.zhang3@tue.nl)
 
-## Requirements
- - Python `3.10` (or lower)
+## Dependencies
+
+Recommended Python version: 3.10
 
 - `conda install -c conda-forge matplotlib`
 - `conda install -c anaconda scipy`
@@ -14,14 +15,14 @@
 - `conda install -c conda-forge importlib_metadata`
 - `conda install -c conda-forge numpoly`
 
-## Dependent Toolboxes
+## Run the overtaking case
 
-This benchmark is based on the following toolboxes. Please cite the sources when you develop your own benchmarks.
-- `stlpy` toolbox (https://github.com/vincekurtz/stlpy/blob/main/README.md)
-- `chaospy` toolbox (https://chaospy.readthedocs.io/en/master/)
+- In `case_1_main.py`, choose the scenario variable `scene` among `0 (OV switching_lane)`, `1 (OV slowing down)`, and `2 (OV speeding up)`;
+- Run `case_1_main.py` to solve the overtaking problem;
+- Run `case_1_plot.py` to visualize the result; Remember to switch the scenario variable `scene` to see results in different scenarios.
 
-## Running scripts
+## Run the intersection case
 
-- Run `uc_1_main.py` for the use case I (overtaking case)
-- Run `uc_2_main.py` for the use case II (intersection case)
-
+- In `case_2_main.py`, choose the scenario variable `scene` among `0 (OV switching_lane)`, `1 (OV slowing down)`, and `2 (OV speeding up)`;
+- Run `case_2_main.py` to solve the overtaking problem;
+- Run `case_2_plot.py` to visualize the result; Remember to switch the scenario variable `scene` to see results in different scenarios.
