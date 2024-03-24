@@ -36,10 +36,5 @@ for j in range(M):
     agents['oppo'].predict(0, N)
     xo[j] = agents['oppo'].states
 
-if False:
-    # Visualize the result
-    visualize(agents, xe[:, :N-1], xo[:, :, :N-1], scene)
-
-if True:
-    # Record the video
-    record(agents, xe[:, :N-1], xo[:, :, :N-1], scene, fps=12)
+# Visualize the result
+visualize(agents, xe[:, :N-1], xo[:, :, :N-1], scene)
