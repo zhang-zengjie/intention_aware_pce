@@ -43,10 +43,5 @@ for j in range(M):
     xo[j] = agents['oppo'].states
     xp[j] = agents['pedes'].states
 
-if True:
-    # Visualize the result
-    visualize(agents, xe, xo, xp, cursor=cursors[1])
-
-if False:
-    # Record the video
-    record(agents, xe, xo, xp, scene, fps=12)
+# Visualize the result
+visualize(agents, xe, xo, xp, cursor=cursors[1])
